@@ -1,5 +1,5 @@
 <?php
-
+use App\Models;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::post("/{version}", function ($version) {
+	  
 });
