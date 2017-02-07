@@ -1,5 +1,7 @@
 <?php
 use App\Models;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post("/{version}", function ($version) {
-	  
+Route::post("/{version}", function ($version, Request $request) {
+		
+		$post = $request->all();
+		
+		if(!class_exists("App\\Http\\REST\\".$post["object"]."\\".$post["api"])){
+			 echo "error";
+			 exit;
+		}	 
+
+		$t =	'App\\Http\\REST\\'.ucfirst($post['object']).'\\'.ucfirst($post['api']);
+		 
+		$obj = new $t;
+		return $obj->run();
+
+	
 });
