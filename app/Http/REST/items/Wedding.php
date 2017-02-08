@@ -3,10 +3,11 @@
 */
 namespace App\Http\REST\Items;
 use App\Models;
+use App\Libs\ZrApi;
 class Wedding
 {
 	function run(){
-		$data = Models\WeddingItems::get();		
-		return response()->json($data);
+		$resp = Models\WeddingItems::get();		
+		return ZrApi::success($resp);
 	}
 }
