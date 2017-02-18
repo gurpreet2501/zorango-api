@@ -1,6 +1,7 @@
 <?php
 use App\Models;
 use Illuminate\Http\Request;
+use App\Libs\ZrApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,9 @@ Route::post("/{version}", function ($version, Request $request) {
 		$t =	'App\\Http\\REST\\'.ucfirst($post['object']).'\\'.ucfirst($post['api']);
 		 
 		$obj = new $t;
-		return $obj->run();
 
+		$resp =  $obj->run();
+
+		return ZrApi::json($resp);
 	
 });
