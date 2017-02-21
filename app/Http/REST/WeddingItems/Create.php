@@ -12,9 +12,9 @@ use App\Libs\Notifications\Factory as Resp;
 class Create
 {
  
-	public function run($data){
-		
-		$data = Models\WeddingItems::get();	
-		return Resp::success($data);
+	public function run(Request $request){
+		$data = $request->get('data');
+		$resp = Models\WeddingItems::create($data);	
+		return Resp::success($resp->toArray());
 	}
 }

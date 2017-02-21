@@ -7,7 +7,7 @@ use App\Libs\Notifications\Factory as Resp;
 class Read
 {
 	function run($data){
-		$data = Models\WeddingItems::get();	
+		$data = Models\WeddingItems::get();
 		return Resp::success($data);
 	}
 }

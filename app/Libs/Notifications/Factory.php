@@ -14,4 +14,12 @@ class Factory
 		];
 	}
 
+	public static function errorCode($code){
+		
+		return [
+		'STATUS' => 'FAILED',
+		'ERRORS' => [$code => config("errors.{$code}")]
+		];
+	}
+
 } ?>

@@ -2,6 +2,7 @@
 use App\Models;
 use Illuminate\Http\Request;
 use App\Libs\ZrApi;
+use App\Libs\Notifications\Factory as Resp;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +22,11 @@ Route::get('/', function () {
 Route::post("/{version}", function ($version, Request $request) {
 
 		$post= $request->all();
-		
+
 		$class = "App\\Http\\REST\\".$post["object"]."\\".$post["api"];
-		
+
 		if(!class_exists($class)){
-			 echo "error";
-			 exit;
+			 return Resp::errorCode(114);
 		}	 
 
 		$t =	'App\\Http\\REST\\'.ucfirst($post['object']).'\\'.ucfirst($post['api']);
@@ -36,7 +36,7 @@ Route::post("/{version}", function ($version, Request $request) {
 		if(empty($post['data']))
 			$post['data'] = [];	
 
-			$resp =  $obj->run($post);
+		$resp =  $obj->run($request);
 
 		return ZrApi::json($resp);
 	
