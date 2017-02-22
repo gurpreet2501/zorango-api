@@ -20,15 +20,15 @@ Route::get('/', function () {
 });
 
 Route::post("/{version}", function ($version, Request $request) {
-
+			
 		$post= $request->all();
-
+		
 		$class = "App\\Http\\REST\\".$post["object"]."\\".$post["api"];
 
 		if(!class_exists($class)){
 			 return Resp::errorCode(114);
 		}	 
-
+	
 		$t =	'App\\Http\\REST\\'.ucfirst($post['object']).'\\'.ucfirst($post['api']);
 
 		$obj = new $t;
