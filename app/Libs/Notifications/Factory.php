@@ -24,10 +24,15 @@ class Factory
 	public static function errors($errors){
 		
 		$errors = (array)$errors;
-		$errors  = array_shift($errors);
+		$errors  = array_values(array_shift($errors));
+		$errFilter = [];
+		foreach ($errors as $key => $val) {
+			$errFilter[$val[0]] = config("errors.{$val[0]}");
+		}
+		
 		return [
 		'STATUS' => 'FAILED',
-		'ERRORS' => [$errors]
+		'ERRORS' => $errFilter
 		];
 	}
 

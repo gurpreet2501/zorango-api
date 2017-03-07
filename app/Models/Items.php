@@ -24,14 +24,14 @@ class Items extends Model
 	  ];
 
 	  protected $validationMessages = [
-    	'name.required' => "Name field required",
-    	'price.required' => "Price field required",
-    	'weight.required' => "Weight field required",
-    	'weight_unit.required' => "Weight Unit field required",
-    	'description.required' => "Description field required",
-    	'brand.required' => "Brand field required",
-    	'stock.required' => "Stock field required",
-    	'items_per_carton.required' => "Items per carton field required",
+    	'name.required' => 123,
+    	'price.required' => 122,
+    	'weight.required' => 116,
+    	'weight_unit.required' => 117,
+    	'description.required' => 118,
+    	'brand.required' => 120,
+    	'stock.required' => 119,
+    	'items_per_carton.required' => 122
 		];
 
      public $timestamps = true;
