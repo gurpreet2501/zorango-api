@@ -31,7 +31,7 @@ class Items extends Model
     	'description.required' => 118,
     	'brand.required' => 120,
     	'stock.required' => 119,
-    	'items_per_carton.required' => 122
+    	'items_per_carton.required' => 121
 		];
 
      public $timestamps = true;
