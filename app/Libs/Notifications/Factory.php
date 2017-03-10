@@ -1,0 +1,39 @@
+<?php /**
+* 
+*/
+namespace App\Libs\Notifications;
+class Factory
+{
+
+	public static function success($data){
+		
+		return [
+		'STATUS' => 'SUCCESS',
+		'RESP'   => $data,
+		'ERRORS' => []
+		];
+	}
+
+	public static function errorCode($code){
+		
+		return [
+		'STATUS' => 'FAILED',
+		'ERRORS' => [$code => config("errors.{$code}")]
+		];
+	}
+	public static function errors($errors){
+		
+		$errors = (array)$errors;
+		$errors  = array_values(array_shift($errors));
+		$errFilter = [];
+		foreach ($errors as $key => $val) {
+			$errFilter[$val[0]] = config("errors.{$val[0]}");
+		}
+		
+		return [
+		'STATUS' => 'FAILED',
+		'ERRORS' => $errFilter
+		];
+	}
+
+} ?>

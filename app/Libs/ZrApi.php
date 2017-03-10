@@ -10,10 +10,6 @@ class ZrApi
 		$this->resp = $resp;
 	}
 
-	function error($code){
-
-	}
-
 	public static function success($resp){
 		$data = [
 			'STATUS' => 'SUCCESS',
@@ -21,5 +17,8 @@ class ZrApi
 		];
 		return response()->json($data);
 	}
-
-} ?>
+	
+	public static function json($json){
+		return new JsonResponse($json);
+	}
+}
