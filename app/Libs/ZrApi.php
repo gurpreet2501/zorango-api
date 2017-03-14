@@ -19,6 +19,6 @@ class ZrApi
 	}
 	
 	public static function json($json){
-		return new JsonResponse($json);
+		return response()->json($json);
 	}
 }
