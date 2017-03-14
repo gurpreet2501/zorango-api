@@ -1,7 +1,7 @@
 <?php 
 
 return [
-'113' => 'Dhan Guru Gobind Singh Ji',
+'113' => '',
 '114' => 'Either Api or Object is invalid',
 '115' => 'Name field required',
 '116' => 'Weight field required',
@@ -12,6 +12,9 @@ return [
 '121' => 'Items per carton field required',
 '122' => 'Price field required',
 '123' => 'Name field required',
+'124' => 'Username field required',
+'125' => 'Password field required',
+'126' => 'Email field required',
 ];
 
  ?>

@@ -15,23 +15,23 @@ class Items extends Model
     protected $rules = [
 	    'name'     => 'required',
 	    'price' => 'required',
-	    'weight'    => 'required',
-	    'weight_unit'    => 'required',
-	    'description'    => 'required',
-	    'brand'    => 'required',
-	    'stock'    => 'required',
-	    'items_per_carton'    => 'required',
+	    // 'weight'    => 'required',
+	    // 'weight_unit'    => 'required',
+	    // 'description'    => 'required',
+	    // 'brand'    => 'required',
+	    // 'stock'    => 'required',
+	    // 'items_per_carton'    => 'required',
 	  ];
 
 	  protected $validationMessages = [
     	'name.required' => 123,
     	'price.required' => 122,
-    	'weight.required' => 116,
-    	'weight_unit.required' => 117,
-    	'description.required' => 118,
-    	'brand.required' => 120,
-    	'stock.required' => 119,
-    	'items_per_carton.required' => 121
+    	// 'description.required' => 118,
+    	// 'weight.required' => 116,
+    	// 'weight_unit.required' => 117,
+    	// 'brand.required' => 120,
+    	// 'stock.required' => 119,
+    	// 'items_per_carton.required' => 121
 		];
 
      public $timestamps = true;
