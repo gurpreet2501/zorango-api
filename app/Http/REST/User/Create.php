@@ -12,10 +12,11 @@ class Create
 		$data = $request->get('data');
 		$data['password'] = Hash::make($data['password']);
 		$data['activated'] = 1;
-		$resp = Models\Users::firstOrCreate($data);
-		echo "<pre>";
-		print_r($resp);
-		exit;
+		$resp = Models\Users::Create($data);
+		
+	 	if(!$resp->isValid())
+	 		return Resp::errors($resp->getErrors());
+
 		return Resp::success($resp->toArray());
 	}
 }

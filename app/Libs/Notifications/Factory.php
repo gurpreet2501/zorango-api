@@ -21,6 +21,15 @@ class Factory
 		'ERRORS' => [$code => config("errors.{$code}")]
 		];
 	}
+	
+	public static function error($error){
+		
+		return [
+		'STATUS' => 'FAILED',
+		'ERRORS' => ['123' => $error]
+		];
+	}
+
 	public static function errors($errors){
 		
 		$errors = (array)$errors;

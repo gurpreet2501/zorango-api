@@ -15,6 +15,10 @@ return [
 '124' => 'Username field required',
 '125' => 'Password field required',
 '126' => 'Email field required',
+'127' => 'Username already exists',
+'128' => 'Email already exists',
+'129' => 'Email/Username is required',
+'130' => 'Login failed either username or password is incorrect',
 ];
 
  ?>
