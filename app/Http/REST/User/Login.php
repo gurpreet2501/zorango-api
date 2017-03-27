@@ -10,19 +10,21 @@ class Login
 	public function run(Request $request){
 		$data = $request->get('data');
 		$email = !empty($data['email']) ? $data['email'] : null;
-		$username = !empty($data['username']) ? $data['username'] : null;
 		$password = !empty($data['password']) ? $data['password'] : null;
 
 		if(!$password)
 			return Resp::errorCode(125);
 
-		if(!$email && !$username)
+		if(!$email)
 			return Resp::errorCode(129);
 
-		if($username)
-			$resp = Models\Users::where('username', $username)->first();
-		else
-			$resp = Models\Users::where('email', $email)->first();
+		$resp = Models\Users::where('email', $email)->first();
+		
+		if(!$resp)
+			return Resp::errorCode(130);
+		
+		if($resp->email != $email)
+			return Resp::errorCode(130);
 
 		if(!Hash::check($password, $resp->password))
 			return Resp::errorCode(130);
