@@ -9,6 +9,9 @@ class Login
 {
 	public function run(Request $request){
 		$data = $request->get('data');
+		echo "<pre>";
+		print_r($data);
+		exit;
 		return Resp::success($resp->toArray());
 	}
 }

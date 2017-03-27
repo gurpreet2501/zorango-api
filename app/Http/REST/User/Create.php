@@ -12,7 +12,7 @@ class Create
 		$data = $request->get('data');
 		$data['password'] = Hash::make($data['password']);
 		$data['activated'] = 1;
-		$resp = Models\Users::create($data);
+		$resp = Models\Users::firstOrCreate($data);
 		echo "<pre>";
 		print_r($resp);
 		exit;

@@ -18,7 +18,7 @@ class ZrApi
 		return response()->json($data);
 	}
 	
-	public static function json($json){
-		return response()->json($json);
+	public static function json($data){
+		return response()->json($data);
 	}
 }
