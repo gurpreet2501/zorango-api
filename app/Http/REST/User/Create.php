@@ -10,9 +10,16 @@ class Create
 	public function run(Request $request){
 
 		$data = $request->get('data');
+
+		$password = !empty($data['password']) ? $data['password'] : null;
+
+		if(!$password)
+			return Resp::errorCode(125);
+
 		$data['password'] = Hash::make($data['password']);
+
 		$data['activated'] = 1;
-				
+		
 		$resp = Models\Users::Create($data);
 		
 	 	if(!$resp->isValid())
@@ -27,6 +34,7 @@ class Create
 	 		return Resp::errors($sess->getErrors());	
 
 	 	$output = $resp->toArray();
+	 	
 	 	unset($output['password']);
 
 		return Resp::success($output);
