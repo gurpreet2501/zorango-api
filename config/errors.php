@@ -19,6 +19,7 @@ return [
 '128' => 'Email already exists',
 '129' => 'Email/Username is required',
 '130' => 'Login failed either username or password is incorrect',
+'131' => 'Guests are not allowed to use this api',
 ];
 
  ?>

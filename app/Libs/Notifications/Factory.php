@@ -9,7 +9,7 @@ class Factory
 		
 		return [
 		'STATUS' => 'SUCCESS',
-		'RESP'   => $data,
+		'RESPONSE'   => $data,
 		'ERRORS' => []
 		];
 	}
