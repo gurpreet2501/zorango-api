@@ -11,9 +11,10 @@ class ZrApi
 	}
 
 	public static function success($resp){
+		
 		$data = [
 			'STATUS' => 'SUCCESS',
-			'RESPONSE' => $resp
+			'RESPONSE' => is_object($resp) ? $resp->toArray() : $resp
 		];
 		return response()->json($data);
 	}
