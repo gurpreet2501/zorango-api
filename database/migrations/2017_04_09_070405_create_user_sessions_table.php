@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemImagesTable extends Migration
+class CreateUserSessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateItemImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_images', function (Blueprint $table) {
+        Schema::create('user_sessions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('item_id');
-            $table->string('image');
+            $table->integer('user_id');
+            $table->string('token',255);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -28,6 +29,6 @@ class CreateItemImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_images');
+        //
     }
 }
