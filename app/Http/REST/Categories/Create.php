@@ -1,5 +1,5 @@
 <?php 
-namespace App\Http\REST\Items;
+namespace App\Http\REST\Categories;
 use App\Models;
 use Illuminate\Http\Request;
 use Watson\Validating\ValidatingTrait;
@@ -9,12 +9,16 @@ class Create
 {
  
 	public function run(Request $request){
+
 		$data = $request->get('data');
-
-    $obj = new Models\Items;    
-
-		$resp = Models\Items::create($data);	
 		
+		$category_name = !empty($data['category_name']) ? $data['category_name'] : '';
+		
+		if(empty($category_name))
+			return Resp::errorCode(132);
+
+    $resp = Models\Categories::create($data);
+
 		if(!$resp->isValid())
 			return Resp::errors($resp->getErrors());
 		

@@ -20,6 +20,7 @@ return [
 '129' => 'Email/Username is required',
 '130' => 'Login failed either username or password is incorrect',
 '131' => 'Guests are not allowed to use this api',
+'132' => 'Category name required',
 ];
 
  ?>

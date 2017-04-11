@@ -20,6 +20,7 @@ class CreateTankAuthUsersAutoLoginTable extends Migration
         //     $table->string('last_ip',40);
         //     $table->dateTime('last_login');
         //     $table->timestamps();
+        // });
     }
 
     /**
