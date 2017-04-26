@@ -21,6 +21,8 @@ return [
 '130' => 'Login failed either username or password is incorrect',
 '131' => 'Guests are not allowed to use this api',
 '132' => 'Category name required',
+'133' => 'Image field required',
+'134' => 'Product id required',
 ];
 
  ?>

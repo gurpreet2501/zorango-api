@@ -26,4 +26,8 @@ class GroceryItems extends Model
 
      public $timestamps = true;
 
+     function images(){
+        return $this->hasMany(Images::class, 'product_id');
+
+     }
 }
